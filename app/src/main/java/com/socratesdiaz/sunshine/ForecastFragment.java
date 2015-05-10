@@ -1,9 +1,11 @@
 package com.socratesdiaz.sunshine;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.text.format.Time;
 import android.util.Log;
@@ -56,6 +58,12 @@ public class ForecastFragment extends Fragment {
     }
 
     @Override
+    public void onStart() {
+        updateWeather();
+        super.onStart();
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
@@ -104,14 +112,20 @@ public class ForecastFragment extends Fragment {
         int id = item.getItemId();
 
         if (id == R.id.action_refresh) {
-            FetchWeatherTask weatherTask = new FetchWeatherTask();
-            weatherTask.execute("94043");
+            updateWeather();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    public void updateWeather() {
+        FetchWeatherTask weatherTask = new FetchWeatherTask();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        String weatherCode = prefs.getString(getString(R.string.settings_location_key),
+                getString(R.string.settings_location_default));
+        weatherTask.execute(weatherCode);
+    }
 
     public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
 
@@ -229,11 +243,17 @@ public class ForecastFragment extends Fragment {
             HttpURLConnection urlConnection = null;
             BufferedReader reader = null;
 
+            // Getting settings
+            SharedPreferences settings =
+                    PreferenceManager.getDefaultSharedPreferences(getActivity());
+
             // Will contain the raw JSON response as a string.
             String forecastJsonStr = null;
 
             String format = "json";
-            String units = "metric";
+            String units = settings.getString(getString(R.string.settings_temp_key),
+                    getString(R.string.settings_temp_default));
+
             int numDays = 7;
 
             try {
