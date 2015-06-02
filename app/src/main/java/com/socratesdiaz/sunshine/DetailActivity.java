@@ -1,10 +1,16 @@
 package com.socratesdiaz.sunshine;
 
 import android.content.Intent;
+import android.net.Uri;
+import android.preference.PreferenceManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.ShareActionProvider;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 
 public class DetailActivity extends ActionBarActivity {
@@ -42,6 +48,27 @@ public class DetailActivity extends ActionBarActivity {
             return true;
         }
 
+        if(id == R.id.action_view_map) {
+            openLocationOnMap();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+
+
+    private void openLocationOnMap() {
+        Uri geoLocation = Uri.parse("geo:0,0");
+        String locationSetting = PreferenceManager.getDefaultSharedPreferences(this)
+                .getString(getString(R.string.settings_location_key),
+                        getString(R.string.settings_location_default));
+        geoLocation.buildUpon()
+                .appendQueryParameter("q", Uri.encode(locationSetting));
+
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, geoLocation);
+        if(mapIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(mapIntent);
+        }
     }
 }

@@ -1,0 +1,52 @@
+TASK com.socratesdiaz.sunshine id=183
+  ACTIVITY com.socratesdiaz.sunshine/.MainActivity 426b41e8 pid=1174
+    Local FragmentActivity 4247a258 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    Active Fragments in 4247a4b0:
+      #0: ForecastFragment{4247b040 #0 id=0x7f0b004f}
+        mFragmentId=#7f0b004f mContainerId=#7f0b004f mTag=null
+        mState=5 mIndex=0 mWho=android:fragment:0 mBackStackNesting=0
+        mAdded=true mRemoving=false mResumed=true mFromLayout=false mInLayout=false
+        mHidden=false mDetached=false mMenuVisible=true mHasMenu=true
+        mRetainInstance=false mRetaining=false mUserVisibleHint=true
+        mFragmentManager=FragmentManager{4247a4b0 in MainActivity{4247a258}}
+        mActivity=com.socratesdiaz.sunshine.MainActivity@4247a258
+        mContainer=android.widget.FrameLayout{42483750 V.E..... ........ 0,0-800,397 #7f0b004f app:id/container}
+        mView=android.widget.FrameLayout{42483d68 V.E..... ........ 0,0-800,397}
+        mInnerView=android.widget.FrameLayout{42483d68 V.E..... ........ 0,0-800,397}
+        Child FragmentManager{42483b30 in ForecastFragment{4247b040}}:
+          FragmentManager misc state:
+            mActivity=com.socratesdiaz.sunshine.MainActivity@4247a258
+            mContainer=android.support.v4.app.Fragment$1@42483ba8
+            mParent=ForecastFragment{4247b040 #0 id=0x7f0b004f}
+            mCurState=5 mStateSaved=false mDestroyed=false
+    Added Fragments:
+      #0: ForecastFragment{4247b040 #0 id=0x7f0b004f}
+    Fragments Created Menus:
+      #0: ForecastFragment{4247b040 #0 id=0x7f0b004f}
+    FragmentManager misc state:
+      mActivity=com.socratesdiaz.sunshine.MainActivity@4247a258
+      mContainer=android.support.v4.app.FragmentActivity$2@4247a528
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{4247b208 V.E..... ... 0,0-800,480}
+        android.widget.LinearLayout{4247ba28 V.E..... ... 0,0-800,480}
+          android.view.ViewStub{4247c4c8 G.E..... ... 0,0-0,0 #1020312}
+          android.widget.FrameLayout{4247c770 V.E..... ... 0,28-800,480}
+            android.support.v7.internal.widget.ActionBarOverlayLayout{4247d668 V.ED.... ... 0,0-800,452 #7f0b003e app:id/decor_content_parent}
+              android.support.v7.internal.widget.NativeActionModeAwareLayout{4247dde8 V.ED.... ... 0,55-800,452 #1020002 android:id/content}
+                android.widget.FrameLayout{42483750 V.E..... ... 0,0-800,397 #7f0b004f app:id/container}
+                  android.widget.FrameLayout{42483d68 V.E..... ... 0,0-800,397}
+                    android.widget.ListView{424840e0 VFED.VC. F.. 18,18-782,379 #7f0b0051 app:id/listview_forecast}
+                      android.support.v7.widget.AppCompatTextView{4248a1e0 V.ED.... ... 0,0-764,73 #7f0b0052 app:id/list_item_forecast_textview}
+                      android.support.v7.widget.AppCompatTextView{4248ac30 V.ED.... ... 0,74-764,147 #7f0b0052 app:id/list_item_forecast_textview}
+                      android.support.v7.widget.AppCompatTextView{4248b3d8 V.ED.... ... 0,148-764,221 #7f0b0052 app:id/list_item_forecast_textview}
+                      android.support.v7.widget.AppCompatTextView{4248be30 V.ED.... ... 0,222-764,295 #7f0b0052 app:id/list_item_forecast_textview}
+                      android.support.v7.widget.AppCompatTextView{4248cc58 V.ED.... ... 0,296-764,369 #7f0b0052 app:id/list_item_forecast_textview}
+              android.support.v7.internal.widget.ActionBarContainer{4247e2a8 V.ED.... ... 0,0-800,55 #7f0b003f app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{4247e868 V.E..... ... 0,0-800,55 #7f0b0040 app:id/action_bar}
+                  android.widget.TextView{42481780 V.ED.... ... 18,16-84,38}
+                  android.support.v7.widget.ActionMenuView{4248d830 V.E..... ... 745,0-800,55}
+                    android.support.v7.widget.ActionMenuPresenter$OverflowMenuButton{4248dc68 VFED..C. ... 0,0-55,55}
+                android.support.v7.internal.widget.ActionBarContextView{42480300 G.E..... ... 0,0-0,0 #7f0b0041 app:id/action_context_bar}

@@ -13,4 +13,6 @@
     <string name="settings_temp_key">temp</string>
     <string name="settings_temp_default">metric</string>
     <string name="settings_temp_label">Temperature Units</string>
+    <string name="choose_location">View on map</string>
+    <string name="action_share">Share</string>
 </resources>
